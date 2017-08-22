@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+   <meta content="utf-8" http-equiv="encoding">
+   <link rel="stylesheet" href="styles.css"/>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+   <script src="vendor/svg.js"></script>
+   <script src="vendor/scrollify.js"></script>
+   <script type="text/javascript" src="app.js"></script>
+   <script>
+            $(function() {
+               $.scrollify({
+                  section: ".landing-strip",
+                  sectionName: 'section-name',
+                  updateHash: true,
+                  scrollbars: false,
+                  afterRender: function() {navigateToSection(0,true)},
+                  afterResize: function() {goToSection()}
+               });
+            });
+         </script>
+   <title> Mark VanLandingham </title>
+</head>
+   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+   <body>
+      <div id="nav-icon">
+        <span class="nav-icon-span"></span>
+        <span class="nav-icon-span"></span>
+        <span class="nav-icon-span"></span>
+      </div>
+      <div id='nav-background'>
+         <div id="nav-menu">
+            <div class="nav-item" onclick='navigateToSection(0)'>Home</div>
+            <div class="nav-item-separator"></div>
+            <div class="nav-item" onclick='navigateToSection(1)'>About Me</div>
+            <div class="nav-item-separator"></div>
+            <div class="nav-item" onclick='navigateToSection(2)'>My Toolkit</div>
+            <div class="nav-item-separator"></div>
+            <div class="nav-item" onclick='navigateToSection(3)'>Past Projects</div>
+            <div class="nav-item-separator"></div>
+            <div class="nav-item" onclick='navigateToSection(4)'>Contact Me</div>
+         </div>
+      </div>
+
+      <div class='landing-strip' id='home-landing-strip' data-section-name='home'>
+         <div id="name"></div>
+         <div id="name-blinker"></div>
+         <div id="keyboard"></div>
+         <div id="title">Web Design & Development</div>
+      </div>
+
+      <div class='landing-strip' id="about-landing-strip" data-section-name='about'>
+         <div id='about-content-wrap'>
+            <div id="about-content__photo-wrap">
+               <span class="contact-arrow left" onclick="changePicture('left')"></span>
+               <span class="contact-arrow right" onclick="changePicture('right')"></span>
+               <div id='about-content__photo-1'></div>
+               <div id='about-content__photo-2'></div>
+               <div id='about-content__photo-3'></div>
+               <div id='about-content__photo-4'></div>
+               <div id='about-content__photo-5'></div>
+            </div>
+            <div class='about-content__description'>I am Mark VanLandingham, a web designer and developer. I have the ability to design and produce marketing sites for businesses or individuals, but have also worked on larger web apps</div>
+            <div class='about-content__description'>My wife's name is Bella, and we live in Lawrence Kansas, where we both attended the University of Kansas. We have 2 dogs and 2 cats. I work out of my shed that I turned into an office, where I also write music and play video games.</div>
+         </div>
+      </div>
+
+      <div class='landing-strip' id="skills-landing-strip" data-section-name='skills'>
+         <div id='skills-content'>
+            <div id='skill-color-bar'></div>
+            <div onmouseover="hoverOnSkill(0)" onmouseout="hoverOutSkill(0)" id='skill-0' class='skill'>
+               <div id='skill-label-0' class="skill-level skill-advanced">Advanced</div>
+               <a href='https://www.w3.org/wiki/The_web_standards_model_-_HTML_CSS_and_JavaScript' target='_blank'><img id='img-0' class='skill-img' src='images/html.png'></a>
+            </div>
+            <div onmouseover="hoverOnSkill(1)" onmouseout="hoverOutSkill(1)" id='skill-1' class='skill'>
+               <div id='skill-label-1' class="skill-level skill-advanced">Advanced</div>
+               <a href='http://jadelang.net/' target='_blank'><img id='img-1' class='skill-img' src='images/jade.png'></a>
+             </div>
+
+            <div onmouseover="hoverOnSkill(2)" onmouseout="hoverOutSkill(2)" id='skill-2' class='skill'>
+               <div id='skill-label-2' class="skill-level skill-advanced">Advanced</div>
+               <a href='http://stylus-lang.com/' target='_blank'><img id='img-2' class='skill-img' src='images/stylus.svg'></a>
+            </div>
+
+            <div onmouseover="hoverOnSkill(3)" onmouseout="hoverOutSkill(3)" id='skill-3' class='skill'>
+               <div id='skill-label-3' class="skill-level skill-intermediate">Intermediate</div>
+               <a href='http://coffeescript.org/' target='_blank'><img id='img-3' class='skill-img' src='images/coffeescript.png'></a>
+            </div>
+
+            <div onmouseover="hoverOnSkill(8)" onmouseout="hoverOutSkill(8)" id='skill-8' class='skill'>
+               <div id='skill-label-8' class="skill-level skill-intermediate">Intermediate</div>
+               <a href='https://nodejs.org/' target='_blank'><img id='img-8' class='skill-img' src='images/node.png'></a>
+            </div>
+
+            <div onmouseover="hoverOnSkill(4)" onmouseout="hoverOutSkill(4)" id='skill-4' class='skill'>
+               <div id='skill-label-4' class="skill-level skill-intermediate">Intermediate</div>
+               <a href='https://www.docker.com/' target='_blank'><img id='img-4' class='skill-img' src='images/docker.png'></a>
+            </div>
+
+            <div onmouseover="hoverOnSkill(5)" onmouseout="hoverOutSkill(5)" id='skill-5' class='skill'>
+               <div id='skill-label-5' class="skill-level skill-intermediate">Intermediate</div>
+               <a href='https://www.rethinkdb.com/' target='_blank'><img id='img-5' class='skill-img' src='images/rethinkdb.png'></a>
+            </div>
+
+            <div onmouseover="hoverOnSkill(6)" onmouseout="hoverOutSkill(6)" id='skill-6' class='skill'>
+               <div id='skill-label-6' class="skill-level skill-novice">Novice</div>
+               <a href='https://www.sketchapp.com/' target='_blank'><img id='img-6' class='skill-img' src='images/sketch.png'></a>
+            </div>
+
+            <div onmouseover="hoverOnSkill(7)" onmouseout="hoverOutSkill(7)" id='skill-7' class='skill'>
+               <div id='skill-label-7' class="skill-level skill-novice">Novice</div>
+               <a href='https://www.wordpressapp.com/' target='_blank'><img id='img-7' class='skill-img' src='images/wordpress.png'></a>
+            </div>
+         </div>
+      </div>
+
+      <div class='landing-strip' id='projects-landing-strip' data-section-name='projects'>
+      <span class="contact-arrow project-arrow-left left" onclick="changeProject('left')"></span>
+      <span class="contact-arrow project-arrow-right right" onclick="changeProject('right')"></span>
+      <div class='project-wrap' id='project-1'>
+         <div class='project-title'>LaborChart</div>
+         <a class='project-link'><img src='images/laborchart.jpg' class='project-image''></a>
+         <div class='project-description'>LaborChart is a construction management web app that aims to greatly improve companies' efficiency. My role was front and back end development, as well as creating an internal web app for admin and salespersons.</div>
+<!--          <div class='project-role'>Front & Back End Development</div> -->
+      </div>
+      <div class='project-wrap' id='project-2'>
+         <div class='project-title'>Rule One</div>
+         <a class='project-link'><img src='images/ruleone.jpg' class='project-image''></a>
+         <div class='project-description'>Rule One is an E-Discovery web app that brings the discovery process directly to the lawyer. The app needed a re-work after the design was significantly altered, and I helped bring Rule One up to date.</div>
+<!--          <div class='project-role'>Front & Back End Development</div> -->
+      </div>
+      <div class='project-wrap' id='project-3'>
+         <div class='project-title'>LaborChart's Website</div>
+         <a class='project-link'><img src='images/lcmarketing.jpg' class='project-image''></a>
+         <div class='project-description'>LaborChart wanted a website that highlights the most important features at a high level. The guys at Laborchart and I decided on basic structure together, and I was asked to design and develope the rest.</div>
+<!--          <div class='project-role'>Design & Developement</div> -->
+      </div>
+
+      </div>
+
+      <div class='landing-strip' id="contact-landing-strip" data-section-name='contact'>
+         <div id='contact-content'>
+            <div id='contact-title'>Contact Me</div>
+            <input type='text' class='contact-input' id='contact-name' placeholder="Name">
+            <input type='text' class='contact-input' id='contact-email' placeholder="Email">
+            <textarea id='contact-message' placeholder="Message"></textarea>
+            <div onclick="sendEmail()" id='contact-submit'>Submit</div>
+         </div>
+      </div>
+
+   </body>
+</html>
