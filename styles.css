@@ -237,25 +237,25 @@ svg {
 }
 
 #about-content__photo-1 {
-   background-image: url('images/1.jpg');
+   background-image: url('images/about-photo-1.jpg');
    opacity: 1;
    transition: opacity .5s;
 }
 
 #about-content__photo-2 {
-   background-image: url('images/2.jpg');
+   background-image: url('images/about-photo-2.jpg');
    opacity: 0;
    transition: opacity .5s;
 }
 
 #about-content__photo-3 {
-   background-image: url('images/3.jpg');
+   background-image: url('images/about-photo-3.jpg');
    opacity: 0;
    transition: opacity .5s;
 }
 
 #about-content__photo-4 {
-   background-image: url('images/4.jpg');
+   background-image: url('images/about-photo-4.jpg');
    opacity: 0;
    transition: opacity .5s;
 }
