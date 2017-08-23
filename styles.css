@@ -249,19 +249,13 @@ svg {
 }
 
 #about-content__photo-3 {
-   background-image: url('images/32.jpg');
+   background-image: url('images/3.jpg');
    opacity: 0;
    transition: opacity .5s;
 }
 
 #about-content__photo-4 {
    background-image: url('images/4.jpg');
-   opacity: 0;
-   transition: opacity .5s;
-}
-
-#about-content__photo-5 {
-   background-image: url('images/5.jpg');
    opacity: 0;
    transition: opacity .5s;
 }

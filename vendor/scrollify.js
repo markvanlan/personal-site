@@ -385,78 +385,7 @@ if touchScroll is false - update index
             "timeStamp" : new Date().getTime()
          },
          touchHandler: function(event) {
-            if(disabled===true) {
-               return true;
-            } else if(settings.standardScrollElements) {
-               if($(event.target).is(settings.standardScrollElements) || $(event.target).closest(settings.standardScrollElements).length) {
-                  return true;
-               }
-            }
-            var touch;
-            if (typeof event !== 'undefined'){
-               if (typeof event.touches !== 'undefined') {
-                  touch = event.touches[0];
-                  switch (event.type) {
-                     case 'touchstart':
-                        swipeScroll.touches.touchstart.y = touch.pageY;
-                        swipeScroll.touches.touchmove.y = -1;
-
-                        swipeScroll.touches.touchstart.x = touch.pageX;
-                        swipeScroll.touches.touchmove.x = -1;
-
-                        swipeScroll.options.timeStamp = new Date().getTime();
-                        swipeScroll.touches.touchend = false;
-                     case 'touchmove':
-                        swipeScroll.touches.touchmove.y = touch.pageY;
-                        swipeScroll.touches.touchmove.x = touch.pageX;
-                        if(swipeScroll.touches.touchstart.y!==swipeScroll.touches.touchmove.y && (Math.abs(swipeScroll.touches.touchstart.y-swipeScroll.touches.touchmove.y)>Math.abs(swipeScroll.touches.touchstart.x-swipeScroll.touches.touchmove.x))) {
-                           //if(!overflow[index]) {
-                              event.preventDefault();
-                           //}
-                           swipeScroll.touches.direction = "y";
-                           if((swipeScroll.options.timeStamp+swipeScroll.options.timeGap)<(new Date().getTime()) && swipeScroll.touches.touchend == false) {
-
-                              swipeScroll.touches.touchend = true;
-                              if (swipeScroll.touches.touchstart.y > -1) {
-
-                                 if(Math.abs(swipeScroll.touches.touchmove.y-swipeScroll.touches.touchstart.y)>swipeScroll.options.distance) {
-                                    if(swipeScroll.touches.touchstart.y < swipeScroll.touches.touchmove.y) {
-
-                                       swipeScroll.up();
-
-                                    } else {
-                                       swipeScroll.down();
-
-                                    }
-                                 }
-                              }
-                           }
-                        }
-                        break;
-                     case 'touchend':
-                        if(swipeScroll.touches[event.type]===false) {
-                           swipeScroll.touches[event.type] = true;
-                           if (swipeScroll.touches.touchstart.y > -1 && swipeScroll.touches.touchmove.y > -1 && swipeScroll.touches.direction==="y") {
-
-                              if(Math.abs(swipeScroll.touches.touchmove.y-swipeScroll.touches.touchstart.y)>swipeScroll.options.distance) {
-                                 if(swipeScroll.touches.touchstart.y < swipeScroll.touches.touchmove.y) {
-                                    swipeScroll.up();
-
-                                 } else {
-                                    swipeScroll.down();
-
-                                 }
-                              }
-                              swipeScroll.touches.touchstart.y = -1;
-                              swipeScroll.touches.touchstart.x = -1;
-                              swipeScroll.touches.direction = "undetermined";
-                           }
-                        }
-                     default:
-                        break;
-                  }
-               }
-            }
+            return;
          },
          down: function() {
 

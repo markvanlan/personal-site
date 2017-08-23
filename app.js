@@ -371,8 +371,8 @@ var removeKeyboard = function() {
 var currentImage = 1
 var changePicture = function(direction) {
    if(direction == 'right'){
-      if(currentImage == 5){
-         document.getElementById('about-content__photo-5').style.opacity = 0
+      if(currentImage == 4){
+         document.getElementById('about-content__photo-4').style.opacity = 0
          document.getElementById('about-content__photo-1').style.opacity = 1
          currentImage = 1
          return
@@ -386,8 +386,8 @@ var changePicture = function(direction) {
    else if(direction == 'left') {
       if(currentImage == 1){
          document.getElementById('about-content__photo-1').style.opacity = 0
-         document.getElementById('about-content__photo-5').style.opacity = 1
-         currentImage = 5
+         document.getElementById('about-content__photo-4').style.opacity = 1
+         currentImage = 4
          return
       }
       else {
