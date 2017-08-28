@@ -22,6 +22,7 @@ $(document).ready(function(){
    $('#skill-color-bar').css({'height':document.getElementById('skills-content').scrollHeight})
    $('.project-image').css({'width':screenWidth*(4/7)})
    $('.project-description').css({'max-weight':screenWidth*(4/7)})
+   $('#name').text('')
 });
 
 window.addEventListener('resize', function(){handleResize();buildKeyboard()})
@@ -55,25 +56,11 @@ var toggleNavOpen = function() {
 }
 
 var navigateToSection = function(index, firstLoad) {
-   if(index == 0){
-      setTimeout(function(){$.scrollify.move(0)},300); currentIndex = 0
-      $('.nav-icon-span').css({'background':'#d62a2a'})
+   setTimeout(function(){$.scrollify.move(index)},300); currentIndex = index
+   if(index == 0 || index == 2) {
+      $('.nav-icon-span').css({'background':'#d62a2a'})   
    }
-   else if(index == 1){
-      setTimeout(function(){$.scrollify.move(1)},300); currentIndex = 1
-      $('.nav-icon-span').css({'background':'#ffffff'})
-   }
-   else if(index == 2){
-      setTimeout(function(){$.scrollify.move(2)},300); currentIndex = 2
-      $('.nav-icon-span').css({'background':'#d62a2a'})
-      $('.skill-img').css({'height':$('.skill').height()})
-   }
-   else if(index == 3){
-      setTimeout(function(){$.scrollify.move(3)},300); currentIndex = 3
-      $('.nav-icon-span').css({'background':'#ffffff'})
-   }
-   else if(index == 4){
-      setTimeout(function(){$.scrollify.move(4)},300); currentIndex = 3
+   else {
       $('.nav-icon-span').css({'background':'#ffffff'})
    }
    if(!firstLoad){
@@ -417,37 +404,6 @@ var hoverOutSkill = function(index) {
    img.style.right = '50%'
    img.style.transform = 'translateX(50%)'
    label.style.opacity = 0;
-}
-
-var currentProject = 1;
-var changeProject = function(direction) {
-
-   if(direction == 'right'){
-      if(currentProject == 3){
-         document.getElementById('project-3').style.opacity = 0
-         document.getElementById('project-1').style.opacity = 1
-         currentProject = 1
-         return
-      }
-      else {
-         document.getElementById('project-'+currentProject).style.opacity = 0
-         document.getElementById('project-'+(currentProject+1)).style.opacity = 1
-         currentProject++;
-      }
-   }
-   else if(direction == 'left') {
-      if(currentProject == 1){
-         document.getElementById('project-1').style.opacity = 0
-         document.getElementById('project-3').style.opacity = 1
-         currentProject = 3
-         return
-      }
-      else {
-         document.getElementById('project-'+currentProject).style.opacity = 0
-         document.getElementById('project-'+(currentProject-1)).style.opacity = 1
-         currentProject--;
-      }
-   }
 }
 
 var sendEmail = function() {
