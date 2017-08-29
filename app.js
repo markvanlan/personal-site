@@ -346,8 +346,6 @@ var buildKeyboard = function(firstLoad) {
       setTimeout(function(){
          k48.fill('#fffdf9')  
       },1000+3550)
-   } else {
-      name.textContent = 'Mark VanLandingham'
    }
 }
 
