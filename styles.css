@@ -13,6 +13,10 @@ svg {
    overflow: visible !important;
 }
 
+a {
+   text-decoration: none;
+}
+
 /******************************************
 ***** NAV
 ******************************************/
@@ -52,6 +56,8 @@ svg {
    text-align:center;
    font-weight:300;
    font-size: 26px;
+   text-decoration: none;
+   color: white;
    cursor:pointer;
    transition: background-color .35s;
    -webkit-transition: .5s;
@@ -63,6 +69,7 @@ svg {
 .nav-item:hover {
    background-color: rgba(255,255,255,.2);
 }
+
 
 .nav-item-separator {
    width:100%;
@@ -297,6 +304,9 @@ svg {
    color: white;
    font-size: 18px;
    font-weight: 300;
+}
+.about-content__description a {
+   color: #95cfb7;
 }
 
 /******************************************
